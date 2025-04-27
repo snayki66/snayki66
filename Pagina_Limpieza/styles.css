@@ -554,7 +554,15 @@ button.clicked {
 .card {
     animation: slideIn 0.5s ease forwards;
 }
-/* Margen de imagen atractivo para galería */
+/* Ajuste responsivo para la galería */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem; /* Añade un padding general para evitar que las imágenes queden pegadas al borde */
+}
+
 .image-border {
     position: relative;
     display: inline-block;
@@ -564,28 +572,6 @@ button.clicked {
     width: 100%;
     max-width: 200px; /* Tamaño máximo para imágenes más pequeñas */
     margin: 0.5rem; /* Espaciado entre imágenes */
-}
-
-.image-border::before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    border: 2px solid rgba(0, 245, 255, 0.4);
-    border-radius: 10px;
-    z-index: -1;
-    animation: borderGlow 3s infinite alternate;
-}
-
-@keyframes borderGlow {
-    0% {
-        box-shadow: 0 0 5px rgba(0, 245, 255, 0.4);
-    }
-    100% {
-        box-shadow: 0 0 10px rgba(0, 245, 255, 0.7);
-    }
 }
 
 .image-border img {
@@ -600,10 +586,15 @@ button.clicked {
     transform: scale(1.03);
 }
 
-/* Ajuste responsivo para la galería */
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+    .gallery {
+        gap: 0.5rem; /* Reduce el espacio entre imágenes en pantallas pequeñas */
+        padding: 0.5rem; /* Ajusta el padding general */
+    }
+
+    .image-border {
+        max-width: 150px; /* Reduce el tamaño máximo de las imágenes */
+        margin: 0.25rem; /* Reduce el margen entre imágenes */
+    }
 }
