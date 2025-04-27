@@ -554,34 +554,37 @@ button.clicked {
 .card {
     animation: slideIn 0.5s ease forwards;
 }
-/* Margen de imagen atractivo */
+/* Margen de imagen atractivo para galería */
 .image-border {
     position: relative;
     display: inline-block;
-    border-radius: 12px;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 200px; /* Tamaño máximo para imágenes más pequeñas */
+    margin: 0.5rem; /* Espaciado entre imágenes */
 }
 
 .image-border::before {
     content: '';
     position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    border: 3px solid rgba(0, 245, 255, 0.5);
-    border-radius: 16px;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid rgba(0, 245, 255, 0.4);
+    border-radius: 10px;
     z-index: -1;
     animation: borderGlow 3s infinite alternate;
 }
 
 @keyframes borderGlow {
     0% {
-        box-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+        box-shadow: 0 0 5px rgba(0, 245, 255, 0.4);
     }
     100% {
-        box-shadow: 0 0 20px rgba(0, 245, 255, 0.8);
+        box-shadow: 0 0 10px rgba(0, 245, 255, 0.7);
     }
 }
 
@@ -589,10 +592,18 @@ button.clicked {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 12px;
+    border-radius: 8px;
     transition: transform 0.3s ease;
 }
 
 .image-border:hover img {
-    transform: scale(1.05);
+    transform: scale(1.03);
+}
+
+/* Ajuste responsivo para la galería */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
 }
