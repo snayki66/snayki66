@@ -554,13 +554,13 @@ button.clicked {
 .card {
     animation: slideIn 0.5s ease forwards;
 }
-/* Ajuste responsivo para la galería */
+/* Galería de imágenes */
 .gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-    padding: 1rem; /* Añade un padding general para evitar que las imágenes queden pegadas al borde */
+    padding: 1rem;
 }
 
 .image-border {
@@ -570,8 +570,8 @@ button.clicked {
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     width: 100%;
-    max-width: 200px; /* Tamaño máximo para imágenes más pequeñas */
-    margin: 0.5rem; /* Espaciado entre imágenes */
+    max-width: 300px;
+    margin: 0.5rem;
 }
 
 .image-border img {
@@ -583,18 +583,18 @@ button.clicked {
 }
 
 .image-border:hover img {
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
-/* Ajustes para dispositivos móviles */
+/* Ajuste responsivo para la galería */
 @media (max-width: 768px) {
     .gallery {
-        gap: 0.5rem; /* Reduce el espacio entre imágenes en pantallas pequeñas */
-        padding: 0.5rem; /* Ajusta el padding general */
+        gap: 0.5rem;
+        padding: 0.5rem;
     }
 
     .image-border {
-        max-width: 150px; /* Reduce el tamaño máximo de las imágenes */
-        margin: 0.25rem; /* Reduce el margen entre imágenes */
+        max-width: 150px;
+        margin: 0.25rem;
     }
 }
